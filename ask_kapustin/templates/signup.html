@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <style>
+        @font-face {
+            font-family: Break; /* Имя шрифта */
+            src: url(../static/break_bold.ttf); /* Путь к файлу со шрифтом */
+            font-family: Dark_crystal; /* Имя шрифта */
+            src: url(../static/dark_crysal.ttf); /* Путь к файлу со шрифтом */
+        }
+    </style>
+    <link rel="shortcut icon" href="../static/favicon.ico">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Вопрос?- Ответ</title>
+
+    <!-- Bootstrap -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/js/bootstrap.js" rel="stylesheet">
+    <![endif]-->
+</head>
+<body id="body" style='padding-top:100px;'>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <br>
+            <a class="navbar-brand" href="index.html" style=" color: red; font-size: 400%; font-family: Dark_crystal">ASK_Service</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <br class="hidden-md">
+                    <form class="navbar-form navbar-left" role="search">
+                        <form class="navbar-form navbar-right" role="form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Поиск" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-info">Поиск</button>
+
+                            <button type="button" class="btn btn-warning" onclick="location.href = 'ask.html'">
+                                Спросить
+                            </button>
+                        </form>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <div class="container-fluid user-info">
+                        <a class="navbar-brand" style="visibility:hidden">Никнейм</a>
+                        <br>
+                        <br>
+                        <button class="btn btn-info">Регистрация</button>
+                        <button type="submit" class="btn btn-success" onclick="location.href='login.html'">Вход</button>
+                    </div>
+                <li>
+            </ul>
+
+        </div><!--/.navbar-collapse -->
+    </div>
+</div>
+
+<div class="container">
+    <br>
+
+    <div class="col-md-9">
+        <form class="form-signin" role="form">
+            <h2 class="form-signin-heading">
+                Регистрация
+            </h2>
+            <br>
+            <div class="form-group">
+                <label for="form-1-field" class="col-sm-2 control-label">Логин</label>
+                <div class="col-md-offset-2" id="form-1-field"><input id="login" required type="text" class="form-control"
+                                                                      placeholder="Введите логин"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="form-1-field" class="col-sm-2 control-label">Пароль</label>
+                <div class="col-md-offset-2" id="form-1-field"><input type="text" class="form-control"
+                                                                      placeholder="Введите пароль" required></div>
+            </div>
+
+            <div class="form-group">
+                <label for="form-1-field" class="col-sm-2 control-label">Подтверждение пароля</label>
+                <div class="col-md-offset-2" id="form-1-field"><input type="text" required class="form-control"
+                                                                      placeholder="Введите пароль еще раз"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="form-1-field" class="col-sm-2 control-label">Электронная почта</label>
+                <div class="col-md-offset-2" id="form-1-field">
+                    <input type="text" class="form-control"  required placeholder="Введите электронную почту">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="form-1-field" class="col-sm-2 control-label">Телефон</label>
+                <!--div class="input-group"-->
+                <div class="col-md-offset-2" id="form-3-field">
+                    <input type="text" required class="form-control" placeholder="Введите телефон">
+                </div>
+            </div>
+             <div class="form-group">
+                <label for="form-1-field" class="col-sm-2 control-label">Аватарка</label>
+                <!--div class="input-group"-->
+                <div class="col-md-offset-2" id="form-4-field">
+                    <input type="file" required class="form-control" >
+                </div>
+            </div>
+
+            <div class="col-md-offset-2" id="form-5-field">
+               <!-- <button class="btn btn-primary" type="button" onclick="location.href='index.html'">Отправить</button>-->
+                <!--a href="index.html" target="_blank">Отправить</a-->
+                 <button class="btn btn-primary" type="submit" >Отправить</button>
+            </div>
+
+
+        </form>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                Популярные теги
+            </div>
+            <div class="panel-body">
+                #Тут_должен_быть_тег
+            </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Топ пользователей</h4>
+            </div>
+            <div class="panel-body">
+                <ul class="media-list">
+                    <li><h4><a href="#">Illidan</a></h4></li>
+                    <li><h4><a href="#">Badman</a></h4></li>
+                    <li><h4><a href="#">...</a></h4></li>
+                    <li><h4><a href="#">Miracle</a></h4></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
