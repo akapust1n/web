@@ -1,0 +1,55 @@
+alexey@msi-ge60:~$ ab -c 10  -n 10000 http://localhost:8081/
+This is ApacheBench, Version 2.3 <$Revision: 1528965 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:        gunicorn/17.5
+Server Hostname:        localhost
+Server Port:            8081
+
+Document Path:          /
+Document Length:        126 bytes
+
+Concurrency Level:      10
+Time taken for tests:   1.386 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      2700000 bytes
+HTML transferred:       1260000 bytes
+Requests per second:    7213.29 [#/sec] (mean)
+Time per request:       1.386 [ms] (mean)
+Time per request:       0.139 [ms] (mean, across all concurrent requests)
+Transfer rate:          1901.94 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     1    1   0.2      1       5
+Waiting:        1    1   0.2      1       5
+Total:          1    1   0.2      1       5
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      2
+  95%      2
+  98%      2
+  99%      2
+ 100%      5 (longest request)
+
