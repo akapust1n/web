@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^test/', views.get_post_params, name="test"),
     url(r'^base/', views.base, name="base"),
+    url(r'^index/', views.index, name="index"),
 ] 
 # static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
