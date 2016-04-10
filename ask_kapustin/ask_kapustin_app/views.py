@@ -26,5 +26,5 @@ def get_post_params(request):
 
     return HttpResponse('<br>'.join(result))
 
-def index(request):
-    return HttpResponse("../static/base.html")
+def base(request):
+    return render(request,"base.html")
