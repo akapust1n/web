@@ -1,115 +1,150 @@
 <!DOCTYPE html>
 {% load staticfiles %}
 <!--suppress HtmlUnknownTarget, HtmlUnknownTarget, HtmlUnknownTarget -->
+{%block all%}
 <html lang="ru">
-	<head
-		<meta charset="utf-8">
-	    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    	<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-	<style >
-     @font-face {  font-family: Break; /* Имя шрифта */
-     src: url({% static '/break_bold.ttf' %}); /* Путь к файлу со шрифтом */
-		 font-family: Dark_crystal; /* Имя шрифта */
-     src: url({% static '/dark_crysal.ttf' %}); /* Путь к файлу со шрифтом */
-      }
+    <style>
+        @font-face {
+            font-family: Break; /* Имя шрифта */
+            src: url({% static '/break_bold.ttf' %}); /* Путь к файлу со шрифтом */
+            font-family: Dark_crystal; /* Имя шрифта */
+            src: url({% static '/dark_crysal.ttf' %}); /* Путь к файлу со шрифтом */
+        }
+
+        {
+        %
+        block
+        custom_css
+        %
+        }
+        {
+        %
+        endblock
+        %
+        }
     </style>
     <link rel="shortcut icon" href="{% static '/favicon.ico' %}">
-	    	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-	    	{% block title %}<title>Вопрос?- Ответ</title>{% endblock %}
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    {% block title %}<title>Вопрос?- Ответ</title>{% endblock %}
 
 
-	    	<!-- Bootstrap -->
-	    	<link href= "{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
-	        <link href= "{% static '/js/bootstrap.js' %}" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/js/bootstrap.js' %}" rel="stylesheet">
 
-	    	<![endif]-->
-	</head>
-  {% block navbar %}
-  <body id="body" style='padding-top:100px;'>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+
+    <![endif]-->
+</head>
+{% block navbar %}
+<body id="body" style='padding-top:100px;'>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
         <div class="navbar-header">
-          <br>
-          <a class="navbar-brand" href="index.html" style=" color: red; font-size: 400%; font-family: Dark_crystal" >ASK_Service</a>
+            <br>
+            <a class="navbar-brand" href='{%url "/" %}'
+               style=" color: red; font-size: 400%; font-family: Dark_crystal">ASK_Service</a>
         </div>
         <div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li>
-							<br class="hidden-md"><form class="navbar-form navbar-left" role="search">
-         <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Поиск" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-info">Поиск</button>
+            <ul class="nav navbar-nav">
+                <li>
+                    <br class="hidden-md">
+                    <form class="navbar-form navbar-left" role="search">
+                        <form class="navbar-form navbar-right" role="form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Поиск" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-info">Поиск</button>
 
-            <button   type="button" class="btn btn-warning" onclick="location.href = 'ask.html'">
-				Спросить
-			</button>
-          </form>
-						</li>
-					</ul>
+                            <button type="button" class="btn btn-warning" onclick="location.href = '{%url 'ask' %}'">
+                                Спросить
+                            </button>
+                        </form>
+                </li>
+            </ul>
+            {%block user_bar%}
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden-md hidden-sm">
+                    <a href="#"><img src="{% static '/avatar.png' %}" alt="Аватарка" class="img-rounded"></a>
 
-					<ul class="nav navbar-nav navbar-right">
-						<li class="hidden-md hidden-sm">
-								<a href="#"><img  src="{% static '/avatar.png' %}" alt="Аватарка" class="img-rounded"></a>
-
-						</li>
-						<li>
-								<div class="container-fluid user-info">
-									<a class="navbar-brand">Никнейм</a>
-									<br>
-									<button class="btn btn-info">Настройки</button>
-									<button type="submit" class="btn btn-danger" onclick="location.href='login.html'">Выйти</button>
-								</div>
-						<li>
-					</ul>
-
+                </li>
+                <li>
+                    <div class="container-fluid user-info">
+                        <a class="navbar-brand">Никнейм</a>
+                        <br>
+                        <button class="btn btn-info">Настройки</button>
+                        <button type="submit" class="btn btn-danger" onclick="location.href='{%url 'login' %}'">Выйти
+                        </button>
+                    </div>
+                <li>
+            </ul>
+            {% endblock%}
         </div><!--/.navbar-collapse -->
-      </div>
     </div>
-  {%endblock%}
-  {% block content %}
+</div>
+{%endblock%}
+{% block content %}
 
 
-  <div class="container">
-	<br>
-		<div class="col-md-9">
-			Жильцы и нахлебники со стороны, прибывая друг за другом, обменивались приветствиями и всяким вздором, который в известных слоях парижского общества часто сходит за веселое остроумие, — его основой является какая-нибудь нелепость, а вся соль — в произношении и жесте. Этот жаргон непрестанно меняется. Шутка, порождающая его, не живет и месяца. Политическое событие, уголовный процесс, уличная песенка, выходки актеров — все служит пищей для подобной игры ума, состоящей в том, что собеседники, подхватив на лету какую-нибудь мысль или словцо, перекидывают их друг другу,как волан. После недавнего изобретения диарамы, достигшей более высокой степени оптической иллюзии, чем панорама, в некоторых живописных мастерских привилась нелепая манера добавлять к словам окончание «рама», и эту манеру, как некий плодоносный черешок, привил к «Дому Воке» один из завсегдатаев, юный художник.
-			<blockquote>
-			<p><h4>— Ну, господин Пуаре, — сказал музейный чиновник, — как ваше здоровьерама? — И, не дожидаясь ответа, обратился к г-же Кутюр и Викторине: — Милые дамы, у вас горе? — А будем мы обедать? Мой желудок ушел usque ad talones.(*в пятки — лат.), — воскликнул студент-медик Орас Бьяншон, друг Растиньяка. — Какая сегодня студерама! — заметил Вотрен. — Ну-ка, подвиньтесь, папаша Горио. Какого черта! Вы своей ногой заслонили все устье печки. — Достославный господин Вотрен, — сказал Бьяншон, — а почему вы говорите «студерама»? Это неправильно, надо — «стужерама». — Нет, — возразил музейный чиновник, — надо — «студерама», — ведь говорится: «студень». — Ха! Ха!..</h4></p>            </blockquote>
+<div class="container">
+    <br>
+    <div class="col-md-9">
+        Жильцы и нахлебники со стороны, прибывая друг за другом, обменивались приветствиями и всяким вздором, который в
+        известных слоях парижского общества часто сходит за веселое остроумие, — его основой является какая-нибудь
+        нелепость, а вся соль — в произношении и жесте. Этот жаргон непрестанно меняется. Шутка, порождающая его, не
+        живет и месяца. Политическое событие, уголовный процесс, уличная песенка, выходки актеров — все служит пищей для
+        подобной игры ума, состоящей в том, что собеседники, подхватив на лету какую-нибудь мысль или словцо,
+        перекидывают их друг другу,как волан. После недавнего изобретения диарамы, достигшей более высокой степени
+        оптической иллюзии, чем панорама, в некоторых живописных мастерских привилась нелепая манера добавлять к словам
+        окончание «рама», и эту манеру, как некий плодоносный черешок, привил к «Дому Воке» один из завсегдатаев, юный
+        художник.
+        <blockquote>
+            <p><h4>— Ну, господин Пуаре, — сказал музейный чиновник, — как ваше здоровьерама? — И, не дожидаясь ответа,
+            обратился к г-же Кутюр и Викторине: — Милые дамы, у вас горе? — А будем мы обедать? Мой желудок ушел usque
+            ad talones.(*в пятки — лат.), — воскликнул студент-медик Орас Бьяншон, друг Растиньяка. — Какая сегодня
+            студерама! — заметил Вотрен. — Ну-ка, подвиньтесь, папаша Горио. Какого черта! Вы своей ногой заслонили все
+            устье печки. — Достославный господин Вотрен, — сказал Бьяншон, — а почему вы говорите «студерама»? Это
+            неправильно, надо — «стужерама». — Нет, — возразил музейный чиновник, — надо — «студерама», — ведь
+            говорится: «студень». — Ха! Ха!..</h4></p>            </blockquote>
 
-		</div>
-	  {% endblock %}
-	  {% block tags %}
-	  <div class="col-md-3">
-		  <div class="panel panel-success">
-			  <div class="panel-heading">
-				  Популярные теги
-			  </div>
-			  <div class="panel-body">
-				  #Тут_должен_быть_тег
-			  </div>
-		  </div>
-      {% endblock %}
-	      {% block top_users %}
-		  <div class="panel panel-primary">
-			  <div class="panel-heading">
-				  <h4>Топ пользователей</h4>
-			  </div>
-			  <div class="panel-body">
-				  <ul class="media-list">
-					  <li><h4><a href="#">Illidan</a></h4></li>
-					  <li><h4><a href="#">Badman</a></h4></li>
-					  <li><h4><a href="#">...</a></h4></li>
-					  <li><h4><a href="#">Miracle</a></h4></li>
-				  </ul>
-			  </div>
-		  </div>
-          {% endblock %}
-  </div>
+    </div>
+    {% endblock %}
+    {% block tags %}
+    <div class="col-md-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                Популярные теги
+            </div>
+            <div class="panel-body">
+                <a href="{% url 'tag' " hashtag1"%}"> hashtag1</a>
 
 
-  </body>
+            </div>
+        </div>
+        {% endblock %}
+        {% block top_users %}
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Топ пользователей</h4>
+            </div>
+            <div class="panel-body">
+                <ul class="media-list">
+                    <li><h4><a href="#">Illidan</a></h4></li>
+                    <li><h4><a href="#">Badman</a></h4></li>
+                    <li><h4><a href="#">...</a></h4></li>
+                    <li><h4><a href="#">Miracle</a></h4></li>
+                </ul>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+
+
+</body>
 </html>
+{%endblock%}
