@@ -6,7 +6,7 @@
 <div class="col-md-9">
     <div class="row-md-1">
         {%block cont_title%}{%endblock%}
-        {% for question in questions %}
+        {% for question in questions1 %}
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="media">
@@ -47,13 +47,12 @@
             </div>
         </div>
         {% endfor%}
+        {% include 'pagination.html' with paginated=questions1 %}
     </div>
 </div>
 {%endblock%}
 
 
-</div>
 
 
-</body>
-</html>
+

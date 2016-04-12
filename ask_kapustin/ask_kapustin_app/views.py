@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_exempt
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render_to_response
 
 
 # Create your views here.
@@ -34,7 +36,7 @@ def base(request):
 
 
 questions = []
-for i in xrange(3):
+for i in xrange(30):
     questions.append({
         'title': 'Question #{}. How I can to do smth?'.format(i),
         'body': 'Badges are numerical indicators of how many items are associated with a link. Use the .badge class within span elements to create badges.',
@@ -43,8 +45,24 @@ for i in xrange(3):
     })
 
 
+def getpagintator(parametr, request, nums_on_list):
+    paginator = Paginator(parametr, nums_on_list)  # Show  nums_on_list contacts per page
+    page = request.GET.get('page')
+    try:
+        questions1 = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        questions1 = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        questions1 = paginator.page(paginator.num_pages)
+    return questions1
+
+
 def index(request, page):
-    return render(request, 'index.html', {'questions': questions,}, page)
+    questions1 = getpagintator(questions, request, 3)
+    return render_to_response('index.html', {"questions1": questions1})
+    # return render(request, 'index.html', {"questions": questions[:5]}, page)
 
 
 def ask(request):
@@ -67,7 +85,7 @@ def question(request, question_id):
 
 
 def hot(request):
-    return render(request, 'hot.html', {'questions': questions,})
+    return render(request, 'hot.html', {'questions': questions[:3],})
 
 
 def tag(request, htag, page):
@@ -75,8 +93,13 @@ def tag(request, htag, page):
         'hash_tag': htag,
         "n_page": page,
     })
-    return render(request, 'tag.html', {'questions': questions, "context": context})
+    questions1 = getpagintator(questions, request, 3)
+    return render(request, 'tag.html', {'questions1': questions1, "context": context})
 
 
 def error(request):
     return render(request, '404page.html')
+
+
+def listing(request):
+    return render('index.html', )
