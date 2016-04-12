@@ -85,7 +85,8 @@ def question(request, question_id):
 
 
 def hot(request):
-    return render(request, 'hot.html', {'questions': questions[:3],})
+    questions1 = getpagintator(questions, request, 3)
+    return render(request, 'hot.html', {'questions1': questions1,})
 
 
 def tag(request, htag, page):
