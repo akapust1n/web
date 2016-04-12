@@ -1,15 +1,14 @@
 
 from django.db import models
-
+from django.contrib.auth.models import User
+import datetime
 
 class Question(models.Model):
-	# author = models.ForeignKey(Profile, null=True)
+	autor=models.ForeignKey(User)
 	title = models.CharField(max_length=50)
 	text = models.TextField()
-	timeStamp = models.DateTimeField()
-	likes = models.IntegerField(default=0)
-	dislikes = models.IntegerField(default=0)
-	# hashtags = models.ManyToManyField(Hashtag)
+	timeStamp = models.DateTimeField(default=datetime.datetime.now())
+	rating=models.IntegerField()
 	answerCount = models.IntegerField(default=0)
 
 

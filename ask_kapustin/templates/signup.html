@@ -10,8 +10,7 @@
                         <br>
                         <br>
                         <button class="btn btn-info" onclick="location.href={%url 'signup' %}">Регистрация</button>
-                        <button type="submit" class="btn btn-success" onclick="location.href={%url 'login' %}">Вход
-                        </button>
+                        <button type="submit" class="btn btn-success" onclick="location.href='{%url 'login' %}'">Вход</button>
                     </div>
                 <li>
             </ul>
@@ -19,8 +18,8 @@
 {%block content%}
 <div class="container">
     <br>
-
     <div class="col-md-9">
+    <div class="row-md-1">
         <form class="form-signin" role="form">
             <h2 class="form-signin-heading">
                 Регистрация
@@ -75,6 +74,7 @@
 
         </form>
     </div>
+        </div>
     {%endblock%}
 
 

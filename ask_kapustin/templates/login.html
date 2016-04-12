@@ -9,8 +9,8 @@
                         <a class="navbar-brand" style="visibility:hidden">Никнейм</a>
                         <br>
                         <br>
-                        <button class="btn btn-info" onclick="location.href={%url 'signup' %}">Регистрация</button>
-                        <button type="submit" class="btn btn-success" onclick="location.href={%url 'login' %}ре">Вход
+                        <button type="submit" class="btn btn-info" onclick="location.href='{%url 'signup' %}'">Регистрация</button>
+                        <button type="submit" class="btn btn-success" onclick="location.href={%url 'login' %}">Вход
                         </button>
                     </div>
                 <li>
@@ -18,8 +18,10 @@
 {%endblock%}
 {%block content%}
 
-
-<div class="col-xs-9 col-sm-9">
+<div class="container">
+    <br>
+    <div class="col-md-9">
+    <div class="row-md-1">
     <h2>Authorization</h2>
     <br>
     <form class="form-horizontal">
@@ -60,10 +62,8 @@
 
         </div>
     </form>
-
+    </div>
 </div>
 {%endblock%}
 
 
-</body>
-</html>

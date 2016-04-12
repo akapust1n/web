@@ -17,17 +17,7 @@
             src: url({% static '/dark_crysal.ttf' %}); /* Путь к файлу со шрифтом */
         }
 
-        {
-        %
-        block
-        custom_css
-        %
-        }
-        {
-        %
-        endblock
-        %
-        }
+        {%block  custom_css%}  {%  endblock  %}
     </style>
     <link rel="shortcut icon" href="{% static '/favicon.ico' %}">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -121,7 +111,7 @@
                 Популярные теги
             </div>
             <div class="panel-body">
-                <a href="{% url 'tag' " hashtag1"%}"> hashtag1</a>
+                <a href="{% url 'tag' 'hashtag1' %}"> hashtag1</a>
 
 
             </div>

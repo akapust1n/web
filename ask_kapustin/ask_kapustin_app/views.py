@@ -46,15 +46,13 @@ for i in xrange(30):
 
 
 def getpagintator(parametr, request, nums_on_list):
-    paginator = Paginator(parametr, nums_on_list)  # Show  nums_on_list contacts per page
+    paginator = Paginator(parametr, nums_on_list)
     page = request.GET.get('page')
     try:
         questions1 = paginator.page(page)
     except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
         questions1 = paginator.page(1)
     except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
         questions1 = paginator.page(paginator.num_pages)
     return questions1
 
@@ -102,5 +100,4 @@ def error(request):
     return render(request, '404page.html')
 
 
-def listing(request):
-    return render('index.html', )
+
