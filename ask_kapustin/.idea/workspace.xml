@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="20ac6950-679a-40d7-a73b-ea41dfcf883e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rr.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="20ac6950-679a-40d7-a73b-ea41dfcf883e" name="Default" comment="fix bug in setting.py (mystery)">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ask_kapustin/settings.py" afterPath="$PROJECT_DIR$/ask_kapustin/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ask_kapustin_app/models.py" afterPath="$PROJECT_DIR$/ask_kapustin_app/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
     </list>
     <ignored path="ask_kapustin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -569,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1460498582527</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix bug in setting.py (mystery)">
+      <created>1461449611519</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1461449611519</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -632,7 +632,8 @@
     <MESSAGE value="add strange pages" />
     <MESSAGE value="add pagination and minor changes" />
     <MESSAGE value="final release 3dz" />
-    <option name="LAST_COMMIT_MESSAGE" value="final release 3dz" />
+    <MESSAGE value="fix bug in setting.py (mystery)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug in setting.py (mystery)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
